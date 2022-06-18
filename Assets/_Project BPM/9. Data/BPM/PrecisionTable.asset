@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07fe1b3a311df4f499334c2be0fcb24c, type: 3}
+  m_Name: PrecisionTable
+  m_EditorClassIdentifier: 
+  precisionGroup:
+  - 0.2
+  - 0.4
+  - 0.7
+  - 1
+  titleGroup:
+  - Great
+  - Good
+  - Fine
+  - Miss
+  colorGroup:
+  - {r: 0.09344962, g: 0.79429996, b: 0.9433962, a: 1}
+  - {r: 0.38128576, g: 0.9150943, b: 0.28057137, a: 1}
+  - {r: 0.86073655, g: 0.9528302, b: 0.28315237, a: 1}
+  - {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  damageMultiplier: []

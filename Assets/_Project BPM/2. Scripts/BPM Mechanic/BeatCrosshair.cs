@@ -18,21 +18,24 @@ public class BeatCrosshair : MonoBehaviour
 
 	public float currentDspTime;
 	public float nextDspTime;
+	float timeTravel;
 	int toggleOffBeet = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         startDspTime = (float)conductor.dspSongTime;
+		timeTravel = conductor.secPerBeat*2f;
 		StartCoroutine(CR_StartSpawnCrosshair(conductor.secPerBeat));
     }
 
 	void SpawnCrosshair(RectTransform crosshairPrefab, Transform spawnPoint)
 	{
+
 		RectTransform newCrosshair = Instantiate(crosshairPrefab, spawnPoint.position, spawnPoint.rotation, transform);
-		newCrosshair.transform.DOMove(crosshairCenter.position, 1f).SetEase(Ease.Linear);
-		newCrosshair.GetComponent<Image>().DOFade(1f, 0.4f).From(0f);
-		Destroy(newCrosshair.gameObject, 1f);
+		newCrosshair.transform.DOMove(crosshairCenter.position, timeTravel).SetEase(Ease.Linear);
+		newCrosshair.GetComponent<Image>().DOFade(1f, timeTravel/2f).From(0f);
+		Destroy(newCrosshair.gameObject, timeTravel);
 	}
 
 	IEnumerator CR_StartSpawnCrosshair(float interval)

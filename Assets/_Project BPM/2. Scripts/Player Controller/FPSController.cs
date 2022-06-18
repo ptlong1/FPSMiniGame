@@ -104,7 +104,7 @@ public class FPSController : MonoBehaviour
 	{
 		if (fpsInputValue.shoot)
 		{
-			Debug.Log("ABC");
+			// Debug.Log("ABC");
 			animator.SetTrigger(animIDShoot);
 			shootAbility.Shoot();
 		}

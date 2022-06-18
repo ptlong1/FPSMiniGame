@@ -6,6 +6,7 @@ public class AudioConductor : MonoBehaviour
 {
 	//This is determined by the song you're trying to sync up to
 	public float songBpm;
+	public float timeBeforeStart;
 
 	//The number of seconds for each song beat
 	public float secPerBeat;
@@ -28,7 +29,7 @@ public class AudioConductor : MonoBehaviour
     void Awake()
     {
         secPerBeat = 60f/songBpm;
-		dspSongTime = AudioSettings.dspTime;
+		dspSongTime = AudioSettings.dspTime - timeBeforeStart;
 		if (musicSource != null)
 			musicSource.Play();
     }
