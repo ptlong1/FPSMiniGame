@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class ScoreCalculate : MonoBehaviour
 {
-	AudioConductor conductor;
+	public AudioConductor conductor;
 	[Header("Score Percent")]
 	public PrecisionTable precisionTable;
 	public PrecisionText precisionText;
 	private void Awake() {
-		conductor = GetComponent<AudioConductor>();	
+		// conductor = GetComponent<AudioConductor>();	
 	}
 	public void BeatPrecision()
 	{
 		float pos = conductor.songPositionInBeats;
 		float offset =pos - Mathf.Round(conductor.songPositionInBeats);
-		Debug.Log(offset);
+		// Debug.Log(offset);
 		offset = Mathf.Abs(offset);
 		int precisionIdx = precisionTable.GetPrecisionGroup(offset, conductor.secPerBeat);
 		Debug.Log(offset);
