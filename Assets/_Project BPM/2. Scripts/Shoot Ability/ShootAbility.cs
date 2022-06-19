@@ -21,7 +21,10 @@ public class ShootAbility : MonoBehaviour
 		{
 			OnShoot.Raise();
 		}
-		Instantiate(bulletPrefab, bulletOutcome.position, bulletOutcome.rotation);
+		Bullet newBulelt = Instantiate(bulletPrefab, bulletOutcome.position, bulletOutcome.rotation);
+		GameObject tmpVFX = Instantiate(shootVFX, gunHead.position, gunHead.rotation, gunHead);
+		Destroy(tmpVFX, 0.3f);
+		Destroy(newBulelt.gameObject, 3f);
 		gunVFX.Play();
 	}
 }

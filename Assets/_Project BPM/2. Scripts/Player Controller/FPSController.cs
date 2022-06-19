@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using ScriptableObjectArchitecture;
 public class FPSController : MonoBehaviour
 {
 	public FPSInputValue fpsInputValue;
@@ -27,6 +28,7 @@ public class FPSController : MonoBehaviour
 	int animIDReload;
 	[Header("Abilities")]
 	ShootAbility shootAbility;
+	public GameEvent OnJump;
     // Start is called before the first frame update
 
 	private void Awake() {
@@ -65,7 +67,8 @@ public class FPSController : MonoBehaviour
 				verticalVel = -2f;
 			if (fpsInputValue.jump)
 			{
-				Debug.Log("ASDASDADS");
+				// Debug.Log("ASDASDADS");
+				OnJump.Raise();
 				verticalVel = Mathf.Sqrt(jumpHeight * 2f * gravity);
 			}
 		}

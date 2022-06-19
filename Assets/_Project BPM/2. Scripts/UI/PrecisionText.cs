@@ -13,6 +13,8 @@ public class PrecisionText : MonoBehaviour
 		text.text = title;
 		// text.color = color;
 		text.DOColor(color, bounceSec/2f);
+		
+		text.GetComponent<RectTransform>().DORewind();
 		text.GetComponent<RectTransform>().DOShakeScale(bounceSec);
 		text.GetComponent<RectTransform>().DOShakePosition(bounceSec);
 		// text.GetComponent<RectTransform>().DOShakeRotation(bounceSec);

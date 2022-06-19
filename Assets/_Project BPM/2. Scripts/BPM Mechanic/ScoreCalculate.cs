@@ -18,7 +18,7 @@ public class ScoreCalculate : MonoBehaviour
 		// Debug.Log(offset);
 		offset = Mathf.Abs(offset);
 		int precisionIdx = precisionTable.GetPrecisionGroup(offset, conductor.secPerBeat);
-		Debug.Log(offset);
+		// Debug.Log(offset);
 		// Debug.Log($"Precision: {precisionGroup[precisionIdx]}, Title: {titleGroup[precisionIdx]}");
 		precisionText.Trigger(precisionTable.titleGroup[precisionIdx], precisionTable.colorGroup[precisionIdx]);
 	}
