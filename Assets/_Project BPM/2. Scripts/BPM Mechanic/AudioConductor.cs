@@ -26,12 +26,14 @@ public class AudioConductor : MonoBehaviour
 	public GameEvent OnNewBeat;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         secPerBeat = 60f/songBpm;
-		dspSongTime = AudioSettings.dspTime - timeBeforeStart;
+		dspSongTime = AudioSettings.dspTime + timeBeforeStart;
 		if (musicSource != null)
-			musicSource.Play();
+			// musicSource.PlayScheduled(dspSongTime + secPerBeat*4f);
+			musicSource.PlayDelayed(secPerBeat*4f);
+		Debug.Log(AudioSettings.dspTime);	
     }
 
     // Update is called once per frame

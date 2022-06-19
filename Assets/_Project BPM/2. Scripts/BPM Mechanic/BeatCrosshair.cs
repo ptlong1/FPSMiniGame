@@ -21,9 +21,13 @@ public class BeatCrosshair : MonoBehaviour
 	float timeTravel;
 	int toggleOffBeet = 0;
 
+	bool isOn;
     // Start is called before the first frame update
-    void Start()
+    public void StartUI()
     {
+		if (isOn) return;
+		isOn = true;
+		Debug.Log(AudioSettings.dspTime);
         startDspTime = (float)conductor.dspSongTime;
 		timeTravel = conductor.secPerBeat*2f;
 		StartCoroutine(CR_StartSpawnCrosshair(conductor.secPerBeat));
