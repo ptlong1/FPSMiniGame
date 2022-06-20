@@ -58,7 +58,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9150943, g: 0.88183236, b: 0.33236915, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -124,6 +124,9 @@ GameObject:
   - component: {fileID: 4114231956755190264}
   - component: {fileID: 4114231956755190267}
   - component: {fileID: 4114231956755190247}
+  - component: {fileID: 1192516995}
+  - component: {fileID: 1192516996}
+  - component: {fileID: 1192516997}
   m_Layer: 5
   m_Name: Canvas_Crosshair
   m_TagString: Untagged
@@ -228,11 +231,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   conductor: {fileID: 4114231957592697199}
   crosshairCenter: {fileID: 4114231956559630232}
-  crosshairLeft: {fileID: 8027139867456178340, guid: c8e12595791e83e4c9a5e5029dfbf0c6,
+  crosshairLeft: {fileID: 4995616535473072278, guid: 3944c25e21cae3f4496c2d2fb17cb077,
     type: 3}
   crosshairLeftMini: {fileID: 9208098647237289716, guid: 6ab532c2c2e0bc443a244a24b5757edf,
     type: 3}
-  crosshairRight: {fileID: 7181799558189146467, guid: b3b5fe823b92ccd40995377318f0cb3b,
+  crosshairRight: {fileID: 2067655874816433511, guid: 9d7cb7cd9ac3b0641b4dd04da181444b,
     type: 3}
   crosshairRightMini: {fileID: 3455074335858107646, guid: 1ec764f4ead1b784a8733253b129ace0,
     type: 3}
@@ -241,6 +244,107 @@ MonoBehaviour:
   startDspTime: 0
   currentDspTime: 0
   nextDspTime: 0
+  fxDuration: 0.3
+  startAlpha: 0.3
+--- !u!114 &1192516995
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114231956755190266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 33431f5674f4d9a45ab3318738c50e96,
+    type: 2}
+  _event: {fileID: 11400000, guid: 33431f5674f4d9a45ab3318738c50e96, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4114231956755190247}
+        m_TargetAssemblyTypeName: BeatCrosshair, Assembly-CSharp
+        m_MethodName: StartUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1192516996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114231956755190266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 24aee090826840842af685a36c352506,
+    type: 2}
+  _event: {fileID: 11400000, guid: 24aee090826840842af685a36c352506, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4114231956755190247}
+        m_TargetAssemblyTypeName: BeatCrosshair, Assembly-CSharp
+        m_MethodName: OnShot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1192516997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114231956755190266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 5d7e60b8850c92442898a8d04479fafe,
+    type: 2}
+  _event: {fileID: 11400000, guid: 5d7e60b8850c92442898a8d04479fafe, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4114231956755190247}
+        m_TargetAssemblyTypeName: BeatCrosshair, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4114231957047038401
 GameObject:
   m_ObjectHideFlags: 0
@@ -286,6 +390,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4114231957592697196}
   - component: {fileID: 4114231957592697199}
+  - component: {fileID: 754421402}
+  - component: {fileID: 754421403}
   m_Layer: 0
   m_Name: AudioConductor
   m_TagString: Untagged
@@ -321,14 +427,86 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02dda066cf227004589b1408eda1b1c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  songBpm: 120
-  timeBeforeStart: 1.8
+  playlist: {fileID: 11400000, guid: 938eb53c7965dd743b494801f238a78a, type: 2}
+  clip: {fileID: 8300000, guid: 272c8b48c7d9a24438dcda07e7285788, type: 3}
+  songBpm: 83
+  timeBeforeStart: 0
   secPerBeat: 0
   songPosition: 0
   songPositionInBeats: 0
   dspSongTime: 0
   musicSource: {fileID: 4114231958066335879}
   OnNewBeat: {fileID: 11400000, guid: 33431f5674f4d9a45ab3318738c50e96, type: 2}
+  playOnAwake: 0
+  isPlaying: 0
+  isPaused: 0
+  OnMusicStop: {fileID: 11400000, guid: 5d7e60b8850c92442898a8d04479fafe, type: 2}
+--- !u!114 &754421402
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114231957592697198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 5d7e60b8850c92442898a8d04479fafe,
+    type: 2}
+  _event: {fileID: 11400000, guid: 5d7e60b8850c92442898a8d04479fafe, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4114231957592697199}
+        m_TargetAssemblyTypeName: AudioConductor, Assembly-CSharp
+        m_MethodName: Pause
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &754421403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114231957592697198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5758ca93461aeeb4589456a052b07d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDebugFields: 0
+  _enableGizmoDebugging: 1
+  _debugColor: {r: 0, g: 1, b: 1, a: 1}
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 9175d39b7229a444cb4bc2abbdda1d99,
+    type: 2}
+  _event: {fileID: 11400000, guid: 9175d39b7229a444cb4bc2abbdda1d99, type: 2}
+  _response:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4114231957592697199}
+        m_TargetAssemblyTypeName: AudioConductor, Assembly-CSharp
+        m_MethodName: Init
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4114231958066335897
 GameObject:
   m_ObjectHideFlags: 0
@@ -372,13 +550,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 272c8b48c7d9a24438dcda07e7285788, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.7
   m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 256
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500

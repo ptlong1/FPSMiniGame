@@ -44,7 +44,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 2efb5c599b595574e94d8b2a78f1ea76, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.7
-  m_Pitch: 0.7
+  m_Pitch: 0.5
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -428,6 +428,7 @@ MonoBehaviour:
   precisionTable: {fileID: 11400000, guid: 091cb5939df280f43afba60ce8d3852d, type: 2}
   precisionText: {fileID: 521108947813737401}
   sfx: {fileID: 1129330964}
+  precisionIndex: {fileID: 11400000, guid: 8cf6b4fba4c4a7f4697099debc93a0af, type: 2}
 --- !u!114 &521108948766765437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -443,9 +444,9 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 11400000, guid: 24aee090826840842af685a36c352506,
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 5b4d6102012be8349a914d42c3b34c4c,
     type: 2}
-  _event: {fileID: 11400000, guid: 24aee090826840842af685a36c352506, type: 2}
+  _event: {fileID: 11400000, guid: 5b4d6102012be8349a914d42c3b34c4c, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
@@ -476,9 +477,9 @@ MonoBehaviour:
   _showDebugFields: 0
   _enableGizmoDebugging: 1
   _debugColor: {r: 0, g: 1, b: 1, a: 1}
-  _previouslyRegisteredEvent: {fileID: 11400000, guid: bb5d076bb0aba8a4386e8e0423fefce5,
+  _previouslyRegisteredEvent: {fileID: 11400000, guid: 5b4d6102012be8349a914d42c3b34c4c,
     type: 2}
-  _event: {fileID: 11400000, guid: bb5d076bb0aba8a4386e8e0423fefce5, type: 2}
+  _event: {fileID: 11400000, guid: 5b4d6102012be8349a914d42c3b34c4c, type: 2}
   _response:
     m_PersistentCalls:
       m_Calls:
