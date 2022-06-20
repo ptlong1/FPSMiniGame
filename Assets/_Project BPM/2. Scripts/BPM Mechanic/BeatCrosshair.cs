@@ -20,8 +20,12 @@ public class BeatCrosshair : MonoBehaviour
 	public float nextDspTime;
 	float timeTravel;
 	int toggleOffBeet = 0;
-
+	Image image;
+	[Header("Crosshair Shot effect")]
+	public float fxDuration;
+	public float startAlpha;
 	bool isOn;
+	Coroutine spawnCR;
     // Start is called before the first frame update
     public void StartUI()
     {
@@ -30,8 +34,23 @@ public class BeatCrosshair : MonoBehaviour
 		Debug.Log(AudioSettings.dspTime);
         startDspTime = (float)conductor.dspSongTime;
 		timeTravel = conductor.secPerBeat*2f;
-		StartCoroutine(CR_StartSpawnCrosshair(conductor.secPerBeat));
+		spawnCR = StartCoroutine(CR_StartSpawnCrosshair(conductor.secPerBeat));
+		image = crosshairCenter.GetComponent<Image>();
+		image.DOFade(startAlpha, 0.5f).From(0f);
+		// startAlpha = image.color.a;
     }
+
+	public void Pause()
+	{
+		StopCoroutine(spawnCR);
+		isOn = false;
+	}
+	
+	public void OnShot()
+	{
+		// image.DORewind();
+		image.DOFade(startAlpha, fxDuration).From(1f).SetEase(Ease.InCubic);
+	}
 
 	void SpawnCrosshair(RectTransform crosshairPrefab, Transform spawnPoint)
 	{
@@ -39,7 +58,7 @@ public class BeatCrosshair : MonoBehaviour
 		RectTransform newCrosshair = Instantiate(crosshairPrefab, spawnPoint.position, spawnPoint.rotation, transform);
 		newCrosshair.transform.DOMove(crosshairCenter.position, timeTravel).SetEase(Ease.Linear);
 		newCrosshair.GetComponent<Image>().DOFade(1f, timeTravel/2f).From(0f);
-		Destroy(newCrosshair.gameObject, timeTravel);
+		Destroy(newCrosshair.gameObject, timeTravel + conductor.secPerBeat*(0.1f));
 	}
 
 	IEnumerator CR_StartSpawnCrosshair(float interval)
@@ -71,10 +90,4 @@ public class BeatCrosshair : MonoBehaviour
 		}
 		toggleOffBeet = 1 - toggleOffBeet;
 	}
-
-	// Update is called once per frame
-	void Update()
-    {
-        
-    }
 }

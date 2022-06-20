@@ -24,7 +24,7 @@ public class InstantShotAbility : MonoBehaviour
 		if (Physics.SphereCast(pos, radius, bulletOutcome.forward, out hit, length, whatIsHit))
         {
 
-			Debug.Log("Bullet hit something" + hit.collider.gameObject.ToString());
+			// Debug.Log("Bullet hit something" + hit.collider.gameObject.ToString());
             distanceToObstacle = hit.distance;
 
 			Health target = hit.collider.GetComponent<Health>();
@@ -38,7 +38,7 @@ public class InstantShotAbility : MonoBehaviour
 				GameObject tmpVFX = Instantiate(impactVFX, hit.point, rot);
 				Destroy(tmpVFX, 1f);
 			}
-			Debug.Log("Bullet hit");
+			// Debug.Log("Bullet hit");
         }
 
 	}
