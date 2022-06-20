@@ -23,11 +23,13 @@ public class SongPlaylist : ScriptableObject
 		get
 		{
 			if (playlist == null || playlist.Count == 0) return 0;
+			if (idx < 0) idx += playlist.Count;
 			return idx % playlist.Count;
 		}  
 		set{
 			if (playlist == null || playlist.Count == 0) return;
 			idx = value % playlist.Count;
+			if (idx < 0) idx += playlist.Count;
 		}
 	}
 

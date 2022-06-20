@@ -23,11 +23,14 @@ public class ZombieAgent : MonoBehaviour
 	//States
 	public float sightRange, attackRange;
 	public bool playerInSightRange, playerInAttackRange;
+
+	Damage damage;
 	
 	private void Awake() {
 		player = GameObject.FindGameObjectWithTag("Player").transform;
 		agent = GetComponent<NavMeshAgent>();
 		animator = GetComponent<Animator>();
+		damage = GetComponent<Damage>();
 	}
 
 	private void Update() {
@@ -79,6 +82,7 @@ public class ZombieAgent : MonoBehaviour
 		if (!alreadyAttack)
 		{
 			// attack bla bla
+			player.GetComponent<Health>().TakeDamage(damage.damage);
 			alreadyAttack = true;
 			Invoke(nameof(ResetAttack), timeBetweenAttacks);
 		}

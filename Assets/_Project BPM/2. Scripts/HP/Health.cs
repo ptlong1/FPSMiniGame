@@ -7,9 +7,11 @@ public class Health : MonoBehaviour
 {
 	public float maxHp;
 	public float currentHp;
-
+	public event System.Action OnHurt;
 	public GameObject deathVFX;
 	public event System.Action OnDie;
+	public bool destroyAfterDeath = true;
+	bool isDead;
 
 	void Start()
 	{
@@ -27,10 +29,13 @@ public class Health : MonoBehaviour
 	public void TakeDamage(float vl)
 	{
 		CurrentHp -= vl;
+		if (OnHurt != null) OnHurt();
 	}
 
 	void Die() 
 	{
+		if (isDead) return;
+		isDead = true;
 		if (deathVFX != null)
 		{
 			GameObject vfx = Instantiate(deathVFX, transform.position, deathVFX.transform.rotation);
@@ -40,6 +45,7 @@ public class Health : MonoBehaviour
 		{
 			OnDie();
 		}
-		Destroy(gameObject);
+		if (destroyAfterDeath)
+			Destroy(gameObject);
 	}
 }

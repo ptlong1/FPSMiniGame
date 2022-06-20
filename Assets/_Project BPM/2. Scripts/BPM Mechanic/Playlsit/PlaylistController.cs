@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using ScriptableObjectArchitecture;
+using UnityEngine.InputSystem;
+using TMPro;
 public class PlaylistController : MonoBehaviour
 {
 	public SongPlaylist playlist;
@@ -9,6 +11,7 @@ public class PlaylistController : MonoBehaviour
 	public GameEvent OnSongStop;
 	public GameEvent OnSongStart;
 	Coroutine currentCR;
+	public TMP_Text nameSong;
 
 	void Start()
 	{
@@ -35,6 +38,7 @@ public class PlaylistController : MonoBehaviour
 
 	public void PlayNextSongAfter()
 	{
+		// OnSongStop.Raise();
 		NextSong();
 		if (currentCR !=null)
 		{
@@ -44,6 +48,7 @@ public class PlaylistController : MonoBehaviour
 	}
 	public void PlayPrevSongAfter()
 	{
+		// OnSongStop.Raise();
 		playlist.Idx--;
 		if (currentCR !=null)
 		{
@@ -52,6 +57,17 @@ public class PlaylistController : MonoBehaviour
 		currentCR = StartCoroutine(CR_PlaySongAfter(timeRest));
 	}
 
+	void Update()
+	{
+		if (Keyboard.current.qKey.wasPressedThisFrame)
+		{
+			OnSongStop.Raise();
+		}
+	}
 
+	public void UpdateSongName()
+	{
+		nameSong.text = "SONG: " + playlist.CurrentSong.name;
+	}
 
 }

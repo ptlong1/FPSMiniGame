@@ -21,8 +21,12 @@ MonoBehaviour:
     name: Renai Circulation
     songBpm: 120
     timeBeforeStart: 0.06
-  - clip: {fileID: 8300000, guid: eb8817fb623317b46af05fb1658c7edc, type: 3}
-    name: Renai Circulation
-    songBpm: 167
+  - clip: {fileID: 8300000, guid: 2a2367238eee1ca4e8eaff1491c2d463, type: 3}
+    name: Mountain Sound
+    songBpm: 102
+    timeBeforeStart: 0.3
+  - clip: {fileID: 8300000, guid: 5025f93486c285644809806127e3d363, type: 3}
+    name: Roses
+    songBpm: 100
     timeBeforeStart: 0
-  idx: 2
+  idx: 0

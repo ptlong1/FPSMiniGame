@@ -57,11 +57,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1991915390, guid: 042872c1bba04d84eb9f9e686d669877, type: 3}
       propertyPath: m_Speed
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991915391, guid: 042872c1bba04d84eb9f9e686d669877, type: 3}
+      propertyPath: sightRange
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 1991915392, guid: 042872c1bba04d84eb9f9e686d669877, type: 3}
       propertyPath: maxHp
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1991915392, guid: 042872c1bba04d84eb9f9e686d669877, type: 3}
+      propertyPath: destroyAfterDeath
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042872c1bba04d84eb9f9e686d669877, type: 3}
