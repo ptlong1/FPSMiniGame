@@ -16,10 +16,14 @@ public class InstantShotAbility : MonoBehaviour
 	public GameObject shootVFX;
 	public GameObject impactVFX;
 	public GameEvent OnShoot;
+	public GameEvent OnCallPrecision;
+	public PrecisionTable precisionTable;
+	public IntVariable precisionIndex;
 	public void Shoot(Vector3 pos, Quaternion rot)
 	{
         RaycastHit hit;
 		float distanceToObstacle = 0;
+		float currentDmg = damage*precisionTable.damageMultiplier[precisionIndex.Value];
 
 		if (Physics.SphereCast(pos, radius, bulletOutcome.forward, out hit, length, whatIsHit))
         {
@@ -32,7 +36,7 @@ public class InstantShotAbility : MonoBehaviour
 			{
 				return;
 			} 
-			target.TakeDamage(damage);
+			target.TakeDamage(currentDmg);
 			if (impactVFX != null)
 			{
 				GameObject tmpVFX = Instantiate(impactVFX, hit.point, rot);
@@ -44,6 +48,8 @@ public class InstantShotAbility : MonoBehaviour
 	}
 	public void Shoot()
 	{
+		if (OnCallPrecision != null)
+			OnCallPrecision.Raise();
 		if (OnShoot != null)
 		{
 			OnShoot.Raise();

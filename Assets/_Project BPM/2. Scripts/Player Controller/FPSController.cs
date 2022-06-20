@@ -30,6 +30,9 @@ public class FPSController : MonoBehaviour
 	ShootAbility shootAbility;
 	public InstantShotAbility instantShoot;
 	public GameEvent OnJump;
+	[Header("Precision Event")]
+	public GameEvent OnCallPrecision;
+	public IntVariable precisionIndex;
     // Start is called before the first frame update
 
 	private void Awake() {
@@ -69,8 +72,13 @@ public class FPSController : MonoBehaviour
 			if (fpsInputValue.jump)
 			{
 				// Debug.Log("ASDASDADS");
-				OnJump.Raise();
-				verticalVel = Mathf.Sqrt(jumpHeight * 2f * gravity);
+				if (OnCallPrecision != null)
+					OnCallPrecision.Raise();
+				if (precisionIndex <= 2)
+				{
+					OnJump.Raise();
+					verticalVel = Mathf.Sqrt(jumpHeight * 2f * gravity);
+				}
 			}
 		}
 		else

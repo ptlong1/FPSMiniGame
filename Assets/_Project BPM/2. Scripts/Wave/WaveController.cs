@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class WaveController : MonoBehaviour
 {
 	public ZombieAgent zombiePrefabs;
@@ -11,11 +11,12 @@ public class WaveController : MonoBehaviour
 	public Transform center;
 	public Vector2 randomRange;
 	public ScoreController scoreController;
-
+	public TMP_Text remainZombieText;
 	public int ZombieRemain { get => zombieRemain; 
 		set 
 		{
 			zombieRemain = value;
+			remainZombieText.text = $"ZOM:{zombieRemain}/{zombiePerWave}";
 			if (zombieRemain <= 0)
 			{
 				EndRound();
@@ -42,6 +43,7 @@ public class WaveController : MonoBehaviour
 		if (zombieAgents == null)
 			zombieAgents = new List<ZombieAgent>();
 		zombieAgents.Clear();
+		zombiePerWave += 3;
 		for (int i = 0; i < zombiePerWave; ++i)
 		{
 			ZombieAgent zombie = SpawnRandom();
