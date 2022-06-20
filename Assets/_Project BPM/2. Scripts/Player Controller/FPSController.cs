@@ -28,6 +28,7 @@ public class FPSController : MonoBehaviour
 	int animIDReload;
 	[Header("Abilities")]
 	ShootAbility shootAbility;
+	public InstantShotAbility instantShoot;
 	public GameEvent OnJump;
     // Start is called before the first frame update
 
@@ -109,7 +110,8 @@ public class FPSController : MonoBehaviour
 		{
 			// Debug.Log("ABC");
 			animator.SetTrigger(animIDShoot);
-			shootAbility.Shoot();
+			// shootAbility.Shoot();
+			instantShoot.Shoot();
 		}
 	}
 }
